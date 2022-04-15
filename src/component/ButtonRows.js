@@ -1,24 +1,30 @@
-/* eslint-disable react/destructuring-assignment */
-import SingleButton from './keysButton.js';
+/* eslint-disable no-console */
+import CalculatorKeys from './calculatorKey.js';
 import { React } from 'react';
+import CalculatorValue from './calculatorValue.js';
 
-const RowButton = (context, i) => {
+const ButtonRow = (context, i) => {
 	const { data: rows } = context;
+
+	console.log(i);
 
 	return (
 		<div key={ i }>
-			{ rows.map((key) =>
-				SingleButton({ ...context, data: key })) }</div>);
+			{ rows.label.keys.map((key) =>
+				CalculatorKeys({ ...context, data: key })) }
+			{ rows.label.values.map((value) =>
+				CalculatorValue({ ...context, data: value })) }
+		</div>);
 };
 
-const RowsButton = (context) => {
+const ButtonRows = (context) => {
 	const { config } = context;
 
 	return (
 		<div>
-			{ config.calculatorKeys.map((rows) =>
-				RowButton({ ...context, data: rows })) }</div>
+			{ config.calculatorKeys.map((rows, i) =>
+				ButtonRow({ ...context, data: rows }, i)) }</div>
 	);
 };
 
-export default RowsButton;
+export default ButtonRows;
