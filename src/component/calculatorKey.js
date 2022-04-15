@@ -1,12 +1,12 @@
 import { React } from 'react';
 
 const CalculatorKeys = (context) => {
-	const { data: Key } = context;
+	const { data: rows } = context;
 
 	return (
 		<button
-			key={ Key }
-		>{ Key }</button>
+			key={ rows.label }
+		>{ rows.label }</button>
 	);
 };
 

@@ -1,13 +1,13 @@
 import { React } from 'react';
 
 const CalculatorValue = (context) => {
-	const { data: value } = context;
+	const { data: rows } = context;
 
 	return (
 		<button
-			key={ value }
-			onClick={ () => context.actions.display(value) }
-		>{ value }</button>
+			key={ rows.value }
+			onClick={ () => context.actions.display(rows.value) }
+		>{ rows.value }</button>
 	);
 };
 
