@@ -9,14 +9,7 @@ const App = (context) => {
 	console.log(state);
 	return (
 		<div className="App" role="App">
-			<div style={ { display: 'flex',
-				border: '5px Solid black',
-				position: 'absolute',
-				height: '3%',
-				width: '10%',
-				fontWeight: 'bold',
-				align: 'center' } }
-			>
+			<div className="textBox">
 				Output: { state.number} </div>
 			<div>{ RowsButton(context) }</div>
 		</div>
