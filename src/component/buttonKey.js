@@ -1,6 +1,6 @@
 import { React } from 'react';
 
-const ButtonKeys = (context) => {
+const ButtonKey = (context) => {
 	const { data: rows, config } = context;
 	const style = {
 		width: `${ config.button.width }vMin`,
@@ -15,4 +15,4 @@ const ButtonKeys = (context) => {
 	);
 };
 
-export default ButtonKeys;
+export default ButtonKey;
