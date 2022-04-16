@@ -9,10 +9,9 @@
 	}
 	.textBox {
 		display: flex;
-		border: 5px Solid black;
-		height: 3%;
-		width: 20%;
-		font-Weight: bold;
-		align-content: center;
+		justify-content: flex-end;
+		border: 1px Solid black;
+		font-weight: bold;
+		font-size: 24pt;
 	}
 }

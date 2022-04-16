@@ -22,8 +22,14 @@ const config = {
 		{ label: '.', operation: 'decimalValue' },
 		{ label: 'Ac', operation: 'clear' },
 		{ label: 'X', operation: 'BackSpace' },
-		{ label: '%', operation: '%' },
+		{ label: '%', operation: 'percentage' },
+		{ label: '00', operation: 'addingZeros' },
 	],
+	button: {
+		width: 8,
+		height: 8,
+		noOfElementsInRow: 4,
+	},
 };
 
 export default config;
