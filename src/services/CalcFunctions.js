@@ -6,6 +6,9 @@ const CalcFunctions = {
 
 		return (state.number * ten) + data;
 	},
+	// const addition = (context.data) => {
+	// 	return state.result + state.data
+	// }
 
 	MathFunction: (context) => {
 		const { data, state } = context;
