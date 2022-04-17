@@ -1,23 +1,24 @@
 /* eslint-disable no-console */
+
+const ten = 10;
 const CalcFunctions = {
 	number: (context) => {
 		const { state, data } = context;
-		const ten = 10;
 
 		return (state.number * ten) + data;
 	},
 	key: (context) => context.data,
 	MathFunction: (context) => {
-		const { data, state } = context;
+		const { state } = context;
 
-		return state.result + data;
+		return state.result + state.number ;
 	},
 	operation: (context) => {
 		const { state } = context;
 
 		return state.operator === ''
-			? CalcFunctions.number(context)
-			: CalcFunctions.MathFunction(context);
+			? CalcFunctions.MathFunction(context)
+			: state.result;
 	},
 };
 
