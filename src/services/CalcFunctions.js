@@ -6,32 +6,7 @@ const CalcFunctions = {
 
 		return (state.number * ten) + data;
 	},
-	// const addition = (context.data) => {
-	// 	return state.result + state.data
-	// }
-
-	MathFunction: (context) => {
-		const { data, state } = context;
-
-		switch (data) {
-		case 'add':
-			return state.result + state.number;
-		case 'subtract':
-			return state.result - state.number;
-		case 'multiply':
-			return state.result * state.number;
-		}
-	},
-
-	key: (context) => {
-		const { data } = context;
-
-		console.log(CalcFunctions.MathFunction(context));
-
-		return data === 'compute'
-			? context.state.result
-			: CalcFunctions.MathFunction(context);
-	},
+	key: (context) => context.data,
 
 };
 
