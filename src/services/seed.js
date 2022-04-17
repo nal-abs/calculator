@@ -1,7 +1,5 @@
-import config from './config';
-
 const seed = {
-	number: config.numberStart,
+	number: 0,
 	operator: '',
 	result: 0,
 };

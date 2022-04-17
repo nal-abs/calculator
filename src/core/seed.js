@@ -1,6 +1,6 @@
 const seed = {
 	number: 0,
-	operator: 'add',
+	operator: '',
 	result: 0,
 };
 
