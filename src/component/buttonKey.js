@@ -1,7 +1,7 @@
 import { React } from 'react';
 
 const ButtonKey = (context) => {
-	const { data: rows, config } = context;
+	const { data: rows, config, actions } = context;
 	const style = {
 		width: `${ config.button.width }vMin`,
 		height: `${ config.button.width }vMin`,
@@ -11,6 +11,7 @@ const ButtonKey = (context) => {
 		<button
 			key={ rows.label }
 			style={ style }
+			onClick={ () => actions.displayString(rows.operation) }
 		>{ rows.label }</button>
 	);
 };

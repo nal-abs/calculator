@@ -1,10 +1,17 @@
-const ten = 10;
+import CalcFunctions from '../services/CalcFunctions';
+
 const display = (context) => ({
-	number: (context.state.number * ten) + context.data,
+	number: CalcFunctions.number(context),
+});
+const displayString = (context) => ({
+	result: CalcFunctions.key(context),
+	number: 0,
+	operator: context.data,
 });
 
 const actions = {
 	display,
+	displayString,
 };
 
 export default actions;
