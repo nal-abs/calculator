@@ -2,6 +2,7 @@ import CalcFunctions from '../services/CalcFunctions';
 
 const display = (context) => ({
 	number: CalcFunctions.number(context),
+	operator: '',
 });
 const displayString = (context) => ({
 	result: CalcFunctions.key(context),

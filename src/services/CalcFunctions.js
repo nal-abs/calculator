@@ -8,24 +8,26 @@ const CalcFunctions = {
 	},
 
 	MathFunction: (context) => {
-		const { state } = context;
+		const { data, state } = context;
 
-		switch (state.operator) {
+		switch (data) {
 		case 'add':
 			return state.result + state.number;
 		case 'subtract':
 			return state.result - state.number;
+		case 'multiply':
+			return state.result * state.number;
 		}
 	},
 
 	key: (context) => {
-		const { data, state: { number }} = context;
+		const { data } = context;
 
 		console.log(CalcFunctions.MathFunction(context));
 
 		return data === 'compute'
-			? CalcFunctions.MathFunction(context)
-			: number;
+			? context.state.result
+			: CalcFunctions.MathFunction(context);
 	},
 
 };
