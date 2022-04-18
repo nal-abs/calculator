@@ -1,32 +1,24 @@
 /* eslint-disable no-console */
 
+import MathFunction from './MathFunction';
+
 const ten = 10;
 const CalcFunctions = {
-	number: (context) => {
+	getNumber: (context) => {
 		const { state, data } = context;
 
 		return (state.number * ten) + data;
 	},
-	key: (context) => context.data,
+	getOperator: (context) => context.data,
 
-	add: (context) => (context.state.result - context.state.number)
-	+ CalcFunctions.number(context),
-
-	subtract: (context) => (context.state.result
-	+ context.state.number) - CalcFunctions.number(context),
-
-	multiply: (context) => context.state.result * CalcFunctions.number(context),
-
-	division: (context) => context.state.result / CalcFunctions.number(context),
-
-	MathFunction: (context) => {
-		const compute = CalcFunctions[context.state.operator];
+	calculation: (context) => {
+		const compute = MathFunction[context.state.operator];
 
 		return context.state.operator !== ''
 			? compute(context)
-			: CalcFunctions.number(context);
+			: CalcFunctions.getNumber(context);
 	},
-	operation: (context) => CalcFunctions.MathFunction(context),
+
 };
 
 export default CalcFunctions;

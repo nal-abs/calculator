@@ -1,11 +1,11 @@
 import CalcFunctions from '../services/CalcFunctions';
 
 const display = (context) => ({
-	number: CalcFunctions.number(context),
-	result: CalcFunctions.operation(context),
+	number: CalcFunctions.getNumber(context),
+	result: CalcFunctions.calculation(context),
 });
 const displayString = (context) => ({
-	operator: CalcFunctions.key(context),
+	operator: CalcFunctions.getOperator(context),
 	number: 0,
 });
 
