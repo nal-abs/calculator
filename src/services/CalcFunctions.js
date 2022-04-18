@@ -8,18 +8,25 @@ const CalcFunctions = {
 		return (state.number * ten) + data;
 	},
 	key: (context) => context.data,
+
+	add: (context) => (context.state.result - context.state.number)
+	+ CalcFunctions.number(context),
+
+	subtract: (context) => (context.state.result
+	+ context.state.number) - CalcFunctions.number(context),
+
+	// multiply: (context) => context.state.result * context.data,
+
+	// division: (context) => context.state.result / context.data,
+
 	MathFunction: (context) => {
-		const { state } = context;
+		const compute = CalcFunctions[context.state.operator];
 
-		return state.result + state.number ;
+		return context.state.operator !== ''
+			? compute(context)
+			: CalcFunctions.number(context);
 	},
-	operation: (context) => {
-		const { state } = context;
-
-		return state.operator === ''
-			? CalcFunctions.MathFunction(context)
-			: state.result;
-	},
+	operation: (context) => CalcFunctions.MathFunction(context),
 };
 
 export default CalcFunctions;
