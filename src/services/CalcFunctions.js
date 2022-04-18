@@ -17,7 +17,7 @@ const CalcFunctions = {
 
 	multiply: (context) => context.state.result * CalcFunctions.number(context),
 
-	// division: (context) => context.state.result / context.data,
+	division: (context) => context.state.result / CalcFunctions.number(context),
 
 	MathFunction: (context) => {
 		const compute = CalcFunctions[context.state.operator];
