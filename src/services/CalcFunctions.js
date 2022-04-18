@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-import MathFunction from './MathFunction';
+import operators from './MathFunction.js';
 
 const ten = 10;
 const CalcFunctions = {
@@ -12,13 +12,12 @@ const CalcFunctions = {
 	getOperator: (context) => context.data,
 
 	calculation: (context) => {
-		const compute = MathFunction[context.state.operator];
+		const { state } = context;
 
-		return context.state.operator !== ''
-			? compute(context)
+		return state.operator !== ''
+			? operators[state.operator](context)
 			: CalcFunctions.getNumber(context);
 	},
-
 };
 
 export default CalcFunctions;

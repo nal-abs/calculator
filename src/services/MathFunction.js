@@ -1,19 +1,30 @@
-import CalcFunctions from './CalcFunctions.js';
+const nine = 9;
+const ten = 10;
+const operators = {
 
-const MathFunction = {
+	add: (context) => {
+		const { state: { result, number }, data } = context;
 
-	add: (context) => (context.state.result - context.state.number)
-	+ CalcFunctions.getNumber(context),
+		return result + (nine * number) + data ;
+	},
+	subtract: (context) => {
+		const { state: { result, number }, data } = context;
 
-	subtract: (context) => (context.state.result
-	+ context.state.number) - CalcFunctions.getNumber(context),
+		return result - (nine * number) - data ;
+	},
 
-	multiply: (context) =>
-		context.state.result * CalcFunctions.getNumber(context),
+	multiply: (context) => {
+		const { state: { result, number }, data } = context;
 
-	division: (context) =>
-		context.state.result / CalcFunctions.getNumber(context),
+		return result * ((ten * number) + data);
+	},
+
+	division: (context) => {
+		const { state: { result, number }, data } = context;
+
+		return result / ((ten * number) + data);
+	},
 
 };
 
-export default MathFunction;
+export default operators;
