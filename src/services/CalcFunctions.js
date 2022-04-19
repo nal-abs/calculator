@@ -12,7 +12,8 @@ const CalcFunctions = {
 
 	calculation: (context) =>
 		(operators[context.state.operator]
-			? operators[context.state.operator](context)
+			? operators[context.state.operator]({ ...context,
+				data: CalcFunctions.getNumber(context) })
 			: CalcFunctions.getNumber(context)),
 
 	CheckOperator: (context) =>
