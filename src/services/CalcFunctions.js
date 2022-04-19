@@ -1,6 +1,4 @@
-/* eslint-disable no-console */
-
-import operators from './MathFunction.js';
+import operators from './operators.js';
 
 const ten = 10;
 const CalcFunctions = {
@@ -15,7 +13,8 @@ const CalcFunctions = {
 		const { state } = context;
 
 		return state.operator !== ''
-			? operators[state.operator](context)
+			? operators[state.operator]({ ...context,
+				data: CalcFunctions.getNumber(context) })
 			: CalcFunctions.getNumber(context);
 	},
 };
