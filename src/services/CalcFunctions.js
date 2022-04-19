@@ -10,14 +10,11 @@ const CalcFunctions = {
 	},
 	getOperator: (context) => context.data,
 
-	calculation: (context) => {
-		const { state } = context;
+	calculation: (context) =>
+		(operators[context.state.operator]
+			? operators[context.state.operator](context)
+			: CalcFunctions.getNumber(context)),
 
-		return state.operator !== ''
-			? operators[state.operator]({ ...context,
-				data: CalcFunctions.getNumber(context) })
-			: CalcFunctions.getNumber(context);
-	},
 	CheckOperator: (context) =>
 		(AdditionalKeys[context.data]
 			? AdditionalKeys[context.data](context)

@@ -9,7 +9,9 @@ const updateKeys = (context) => ({
 	number: 0,
 });
 
-const updateResult = (context) => CalcFunctions.getKeys(context);
+const updateResult = (context) => ({
+	result: CalcFunctions.getKeys(context),
+});
 
 const actions = {
 	display,
