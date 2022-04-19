@@ -4,14 +4,17 @@ const display = (context) => ({
 	number: CalcFunctions.getNumber(context),
 	result: CalcFunctions.calculation(context),
 });
-const displayString = (context) => ({
+const updateKeys = (context) => ({
 	operator: CalcFunctions.getOperator(context),
 	number: 0,
 });
 
+const updateResult = (context) => CalcFunctions.getKeys(context);
+
 const actions = {
 	display,
-	displayString,
+	updateKeys,
+	updateResult,
 };
 
 export default actions;

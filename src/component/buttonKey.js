@@ -11,7 +11,10 @@ const ButtonKey = (context) => {
 		<button
 			key={ rows.label }
 			style={ style }
-			onClick={ () => actions.displayString(rows.operation) }
+			onClick={ () => {
+				actions.updateKeys(rows.operation);
+				actions.updateResult(rows.operation);
+			} }
 		>{ rows.label }</button>
 	);
 };
