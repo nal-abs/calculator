@@ -1,4 +1,4 @@
-import AdditionalKeys from './AdditionalKeys.js';
+import ActionKeys from './ActionKeys.js';
 import operators from './operators.js';
 
 const ten = 10;
@@ -17,8 +17,8 @@ const CalcFunctions = {
 			: CalcFunctions.getNumber(context)),
 
 	CheckOperator: (context) =>
-		(AdditionalKeys[context.data]
-			? AdditionalKeys[context.data](context)
+		(ActionKeys[context.data]
+			? ActionKeys[context.data](context)
 			: context.state.result),
 
 	getKeys: (context) => CalcFunctions.CheckOperator(context),
