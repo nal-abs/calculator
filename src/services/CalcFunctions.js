@@ -2,12 +2,19 @@ import ActionKeys from './ActionKeys.js';
 import operators from './operators.js';
 
 const ten = 10;
+const hundred = 100;
 const CalcFunctions = {
-	getNumber: (context) => {
-		const { state, data } = context;
-
-		return (state.number * ten) + data;
+	number: {
+		'%': (context) => context.state.number / hundred,
+		'00': (context) => context.state.number * hundred,
 	},
+
+	default: (context) => (context.state.number * ten) + context.data,
+
+	getNumber: (context) =>
+		(CalcFunctions.number[context.data]
+			? CalcFunctions.number[context.data](context)
+			: CalcFunctions.default(context)),
 	getOperator: (context) => context.data,
 
 	calculation: (context) =>

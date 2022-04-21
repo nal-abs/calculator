@@ -1,3 +1,4 @@
+// const ten = 10;
 const operators = {
 
 	add: (context) => {
@@ -22,7 +23,6 @@ const operators = {
 
 		return result / data;
 	},
-
 };
 
 export default operators;
