@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import { React } from 'react';
 import './App.scss';
-import ButtonRow from './component/buttonRow';
-import outputDisplay from './component/outputDisplay';
+import ButtonRow from './components/buttonRow';
+import outputDisplay from './components/outputDisplay';
 
 const App = (context) => {
 	const { state } = context;
