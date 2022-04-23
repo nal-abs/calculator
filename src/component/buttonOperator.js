@@ -1,7 +1,7 @@
 import { React } from 'react';
 
-const ButtonOperators = (context) => {
-	const { data: rows, config, actions } = context;
+const ButtonOperator = (context) => {
+	const { data: operator, config, actions } = context;
 	const style = {
 		width: `${ config.button.width }vMin`,
 		height: `${ config.button.width }vMin`,
@@ -9,14 +9,14 @@ const ButtonOperators = (context) => {
 
 	return (
 		<button
-			key={ rows.label }
+			key={ operator.label }
 			style={ style }
 			onClick={ () => {
-				actions.updateKeys(rows.operation);
-				actions.updateResult(rows.operation);
+				actions.updateKeys(operator.operation);
+				actions.updateResult(operator.operation);
 			} }
-		>{ rows.label }</button>
+		>{ operator.label }</button>
 	);
 };
 
-export default ButtonOperators;
+export default ButtonOperator;

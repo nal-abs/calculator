@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { React } from 'react';
 import './App.scss';
-import ButtonRows from './component/buttonRows';
+import ButtonRow from './component/buttonRow';
 import outputDisplay from './component/outputDisplay';
 
 const App = (context) => {
@@ -11,7 +11,7 @@ const App = (context) => {
 	return (
 		<div className="App" role="App">
 			<div>{ outputDisplay(context) }</div>
-			<div>{ ButtonRows(context) }</div>
+			<div>{ ButtonRow(context) }</div>
 		</div>
 	);
 };
