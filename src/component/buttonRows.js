@@ -1,7 +1,8 @@
 import { React } from 'react';
-import ButtonKey from './buttonKey';
 import ButtonValue from './buttonValue';
+import ButtonActionKey from './buttonActionKey';
 import PositionService from '../services/PositionService';
+import ButtonOperators from './buttonOperator';
 
 const ButtonRows = (context) => {
 	const { config } = context;
@@ -15,7 +16,9 @@ const ButtonRows = (context) => {
 			{ config.numbers.map((rows, i) =>
 				ButtonValue({ ...context, data: rows }, i)) }
 			{ config.operators.map((rows, i) =>
-				ButtonKey({ ...context, data: rows }, i)) }
+				ButtonOperators({ ...context, data: rows }, i)) }
+			{ config.ActionKeys.map((rows, i) =>
+				ButtonActionKey({ ...context, data: rows }, i)) }
 		</div>
 	);
 };

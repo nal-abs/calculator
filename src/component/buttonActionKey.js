@@ -1,6 +1,6 @@
 import { React } from 'react';
 
-const ButtonKey = (context) => {
+const buttonActionKey = (context) => {
 	const { data: rows, config, actions } = context;
 	const style = {
 		width: `${ config.button.width }vMin`,
@@ -9,14 +9,15 @@ const ButtonKey = (context) => {
 
 	return (
 		<button
-			key={ rows.label }
+			key={ rows.value }
 			style={ style }
 			onClick={ () => {
-				actions.updateKeys(rows.operation);
-				actions.updateResult(rows.operation);
+				actions.updateNumbers(rows.value);
+				// actions.updateActionKeys(rows.operation);
+				// actions.updateActionResult(rows.operation);
 			} }
-		>{ rows.label }</button>
+		>{ rows.value }</button>
 	);
 };
 
-export default ButtonKey;
+export default buttonActionKey;

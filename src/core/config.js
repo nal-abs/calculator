@@ -12,8 +12,7 @@ const config = {
 		{ label: 7, value: 7 },
 		{ label: 8, value: 8 },
 		{ label: 9, value: 9 },
-		{ label: '%', value: '%' },
-		{ label: '00', value: '00' },
+
 	],
 	operators: [
 		{ label: '+', operation: 'add' },
@@ -24,6 +23,10 @@ const config = {
 		{ label: '.', operation: 'decimalValue' },
 		{ label: 'Ac', operation: 'clear' },
 		{ label: 'X', operation: 'BackSpace' },
+	],
+	ActionKeys: [
+		{ value: '%', operation: 'percentage' },
+		{ value: '00', operation: 'AddingZeros' },
 	],
 	button: {
 		width: 8,
