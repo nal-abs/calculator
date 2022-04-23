@@ -7,6 +7,7 @@ const number = {
 	'%': (context) => context.state.number / hundred,
 	'00': (context) => context.state.number * hundred,
 };
+
 const CalcFunctions = {
 
 	getNumber: (context) => {
@@ -24,6 +25,12 @@ const CalcFunctions = {
 			? operators[operator]({ ...context,
 				data: CalcFunctions.getNumber(context) })
 			: CalcFunctions.getNumber(context);
+	},
+
+	updateResult: (context) => {
+		const { state: { result }, data } = context;
+
+		return data === 'clear' ? 0 : result;
 	},
 };
 

@@ -7,6 +7,7 @@ const setNumber = (context) => ({
 
 const setOperator = (context) => ({
 	operator: context.data,
+	result: CalcFunctions.updateResult(context),
 	number: 0,
 });
 
