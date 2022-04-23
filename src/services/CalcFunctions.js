@@ -1,35 +1,30 @@
-import ActionKeys from './ActionKeys.js';
 import operators from './operators.js';
 
 const ten = 10;
 const hundred = 100;
+
+const number = {
+	'%': (context) => context.state.number / hundred,
+	'00': (context) => context.state.number * hundred,
+};
 const CalcFunctions = {
-	number: {
-		'%': (context) => context.state.number / hundred,
-		'00': (context) => context.state.number * hundred,
+
+	getNumber: (context) => {
+		const { data } = context;
+
+		return number[data]
+			? number[data](context)
+			: (context.state.number * ten) + context.data;
 	},
 
-	default: (context) => (context.state.number * ten) + context.data,
+	calculation: (context) => {
+		const { state: { operator }} = context;
 
-	getNumber: (context) =>
-		(CalcFunctions.number[context.data]
-			? CalcFunctions.number[context.data](context)
-			: CalcFunctions.default(context)),
-	getOperator: (context) => context.data,
-
-	calculation: (context) =>
-		(operators[context.state.operator]
-			? operators[context.state.operator]({ ...context,
+		return operators[operator]
+			? operators[operator]({ ...context,
 				data: CalcFunctions.getNumber(context) })
-			: CalcFunctions.getNumber(context)),
-
-	CheckOperator: (context) =>
-		(ActionKeys[context.data]
-			? ActionKeys[context.data](context)
-			: context.state.result),
-
-	getKeys: (context) => CalcFunctions.CheckOperator(context),
-
+			: CalcFunctions.getNumber(context);
+	},
 };
 
 export default CalcFunctions;

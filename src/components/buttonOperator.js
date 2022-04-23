@@ -12,8 +12,7 @@ const ButtonOperator = (context) => {
 			key={ operator.label }
 			style={ style }
 			onClick={ () => {
-				actions.updateKeys(operator.operation);
-				actions.updateResult(operator.operation);
+				actions.setOperator(operator.operation);
 			} }
 		>{ operator.label }</button>
 	);
