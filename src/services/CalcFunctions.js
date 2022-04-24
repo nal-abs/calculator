@@ -16,11 +16,10 @@ const CalcFunctions = {
 		(specialNumbers[context.data.value] || addDigit)(context),
 
 	calculation: (context) => {
-		const { state: { operator }} = context;
+		const { data } = context;
 
-		return operators[operator]
-			? operators[operator]({ ...context,
-				data: CalcFunctions.getNumber(context) })
+		return operators[data]
+			? operators[data](context)
 			: CalcFunctions.getNumber(context);
 	},
 
