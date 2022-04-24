@@ -18,11 +18,13 @@ const operators = {
 		return result * data;
 	},
 
-	division: (context) => {
+	divide: (context) => {
 		const { state: { result }, data } = context;
 
 		return result / data;
 	},
+
+	compute: (context) => context.state.result,
 };
 
 export default operators;

@@ -11,10 +11,7 @@ const ButtonNumber = (context) => {
 		<button
 			key={ number.value }
 			style={ style }
-			onClick={ () => {
-				actions.setNumber(number.label);
-				// actions.updateResult(number.label);
-			} }
+			onClick={ () =>	actions.setNumber(number) }
 		>{ number.label }</button>
 	);
 };

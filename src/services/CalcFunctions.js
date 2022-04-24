@@ -3,20 +3,17 @@ import operators from './operators.js';
 const ten = 10;
 const hundred = 100;
 
-const number = {
+const specialNumbers = {
 	'%': (context) => context.state.number / hundred,
 	'00': (context) => context.state.number * hundred,
 };
 
+const addDigit = (context) => (context.state.number * ten) + context.data.value;
+
 const CalcFunctions = {
 
-	getNumber: (context) => {
-		const { data } = context;
-
-		return number[data]
-			? number[data](context)
-			: (context.state.number * ten) + context.data;
-	},
+	getNumber: (context) =>
+		(specialNumbers[context.data.value] || addDigit)(context),
 
 	calculation: (context) => {
 		const { state: { operator }} = context;

@@ -12,15 +12,15 @@ const config = {
 		{ label: 7, value: 7 },
 		{ label: 8, value: 8 },
 		{ label: 9, value: 9 },
-		{ label: '%', value: 'percentage' },
-		{ label: '00', value: 'AddingZeros' },
+		{ label: '%', value: '%' },
+		{ label: '00', value: '00' },
 
 	],
 	operators: [
 		{ label: '+', operation: 'add' },
 		{ label: '-', operation: 'subtract' },
 		{ label: '*', operation: 'multiply' },
-		{ label: '/', operation: 'division' },
+		{ label: '/', operation: 'divide' },
 		{ label: '=', operation: 'compute' },
 		{ label: '.', operation: 'decimalValue' },
 		{ label: 'Ac', operation: 'clear' },
