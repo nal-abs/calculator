@@ -13,18 +13,19 @@ const operators = {
 	},
 
 	multiply: (context) => {
-		const { state: { result }, data } = context;
+		const { state: { result, number }} = context;
 
-		return result * data;
+		return result * number;
 	},
 
 	divide: (context) => {
-		const { state: { result }, data } = context;
+		const { state: { result, number }} = context;
 
-		return result / data;
+		return result / number;
 	},
 
 	compute: (context) => context.state.result,
+
 };
 
 export default operators;

@@ -3,12 +3,12 @@ import operators from './operators.js';
 const ten = 10;
 const hundred = 100;
 
+const addDigit = (context) => (context.state.number * ten) + context.data.value;
+
 const specialNumbers = {
 	'%': (context) => context.state.number / hundred,
 	'00': (context) => context.state.number * hundred,
 };
-
-const addDigit = (context) => (context.state.number * ten) + context.data.value;
 
 const CalcFunctions = {
 
@@ -16,18 +16,13 @@ const CalcFunctions = {
 		(specialNumbers[context.data.value] || addDigit)(context),
 
 	calculation: (context) => {
-		const { data } = context;
+		const { state: { operator }} = context;
 
-		return operators[data]
-			? operators[data](context)
+		return operators[operator]
+			? operators[operator](context)
 			: CalcFunctions.getNumber(context);
 	},
 
-	updateResult: (context) => {
-		const { state: { result }, data } = context;
-
-		return data === 'clear' ? 0 : result;
-	},
 };
 
 export default CalcFunctions;
