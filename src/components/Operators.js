@@ -1,6 +1,6 @@
 import { React } from 'react';
 
-const ButtonOperator = (context) => {
+const Operators = (context) => {
 	const { data: operator, config, actions } = context;
 	const style = {
 		width: `${ config.button.width }vMin`,
@@ -18,4 +18,4 @@ const ButtonOperator = (context) => {
 	);
 };
 
-export default ButtonOperator;
+export default Operators;

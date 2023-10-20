@@ -1,11 +1,10 @@
 import { React } from 'react';
-import ButtonNumber from './buttonNumber';
+import Numbers from './Numbers';
 import PositionService from '../services/PositionService';
-import ButtonOperator from './buttonOperator';
+import Operators from './Operators';
 
-const ButtonRow = (context) => {
+const Rows = (context) => {
 	const { config } = context;
-
 	const style = {
 		width: `${ PositionService.buttonPosition(context) }vMin`,
 	};
@@ -13,11 +12,11 @@ const ButtonRow = (context) => {
 	return (
 		<div style={ style }>
 			{ config.numbers.map((number, i) =>
-				ButtonNumber({ ...context, data: number }, i)) }
+				Numbers({ ...context, data: number }, i)) }
 			{ config.operators.map((operator, i) =>
-				ButtonOperator({ ...context, data: operator }, i)) }
+				Operators({ ...context, data: operator }, i)) }
 		</div>
 	);
 };
 
-export default ButtonRow;
+export default Rows;

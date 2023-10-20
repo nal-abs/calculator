@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 import operators from './operators.js';
 
 const ten = 10;

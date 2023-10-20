@@ -1,12 +1,6 @@
 .App {
 	text-align: left;
 
-	button {
-		font-weight: bold;
-		height: 50px;
-		width: 5%;
-		font-size: x-large;
-	}
 	.textBox {
 		display: flex;
 		justify-content: flex-end;
@@ -14,4 +8,13 @@
 		font-weight: bold;
 		font-size: 24pt;
 	}
+}
+.number {
+	width: 8vmin;
+	height: 8vmin;
+}
+
+.sprite {
+	background-image: url('../src/Images/background.png');
+	background-size: 500px 510px;
 }
