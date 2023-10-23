@@ -9,6 +9,7 @@ const addDigit = (context) => (context.state.number * ten) + context.data.value;
 const specialNumbers = {
 	'%': (context) => context.state.number / hundred,
 	'00': (context) => context.state.number * hundred,
+	'X': (context) => context.state.number / 10,
 };
 
 const CalcFunctions = {

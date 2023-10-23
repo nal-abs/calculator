@@ -4,17 +4,15 @@
 	.textBox {
 		display: flex;
 		justify-content: flex-end;
-		border: 1px Solid black;
-		font-weight: bold;
-		font-size: 24pt;
 	}
 }
-.number {
+.buttonSize {
 	width: 8vmin;
 	height: 8vmin;
+	border: none;
 }
 
 .sprite {
-	background-image: url('../src/Images/background.png');
-	background-size: 500px 510px;
+	background-image: url('../src/Images/lower.png');
+	background-size: 400%;
 }

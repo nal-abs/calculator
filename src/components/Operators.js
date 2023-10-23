@@ -1,20 +1,17 @@
 import { React } from 'react';
 
 const Operators = (context) => {
-	const { data: operator, config, actions } = context;
-	const style = {
-		width: `${ config.button.width }vMin`,
-		height: `${ config.button.width }vMin`,
-	};
+	const { data: operator, actions } = context;
 
 	return (
 		<button
 			key={ operator.label }
-			style={ style }
+			className="sprite buttonSize"
+			style={ { backgroundPosition: operator.position } }
 			onClick={ () => {
 				actions.setOperator(operator.operation);
 			} }
-		>{ operator.label }</button>
+		/>
 	);
 };
 
