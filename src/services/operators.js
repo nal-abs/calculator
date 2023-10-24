@@ -7,9 +7,9 @@ const operators = {
 		return result + number ;
 	},
 	subtract: (context) => {
-		const { state: { result, number }, data } = context;
+		const { state: { result, number }} = context;
 
-		return result + number - data ;
+		return result - number;
 	},
 
 	multiply: (context) => {

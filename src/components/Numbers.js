@@ -6,7 +6,8 @@ const Numbers = (context) => {
 	return (
 		<button
 			key={ number.value }
-			style={ { backgroundPosition: number.position } }
+			style={ { backgroundPosition: number.position,
+				width: number.width, backgroundSize: number.size } }
 			className="sprite buttonSize"
 			onClick={ () =>	actions.setNumber(number) }
 		/>

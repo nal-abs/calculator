@@ -8,7 +8,7 @@ const OutputDisplay = (context) => {
 	};
 
 	return (
-		<div style={ style } className="textBox">{ result } </div>
+		<div style={ style } className="textBox">{ result }</div>
 	);
 };
 

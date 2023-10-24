@@ -6,8 +6,8 @@ import OutputDisplay from './components/OutputDisplay';
 
 const App = (context) =>
 	<div className="App" role="App">
-		<div><OutputDisplay { ...context }/></div>
-		<div><RowButton { ...context }/></div>
+		<OutputDisplay { ...context }/>
+		<RowButton { ...context }/>
 	</div>;
 
 export default App;
