@@ -5,7 +5,7 @@ const setNumber = (context) => ({
 });
 
 const setOperator = (context) => ({
-	operator: context.data,
+	operator: context.data.operation,
 	result: CalcFunctions.calculation(context),
 	number: 0,
 });
@@ -13,7 +13,6 @@ const setOperator = (context) => ({
 const actions = {
 	setNumber,
 	setOperator,
-	// updateResult,
 };
 
 export default actions;
