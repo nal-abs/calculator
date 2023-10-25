@@ -1,7 +1,7 @@
 import { React } from 'react';
 import PositionService from '../services/PositionService';
 
-const OutputDisplay = (context) => {
+const Answer = (context) => {
 	const { state: { result }} = context;
 	const style = {
 		width: `${ PositionService.buttonPosition(context) }vMin`,
@@ -12,4 +12,4 @@ const OutputDisplay = (context) => {
 	);
 };
 
-export default OutputDisplay;
+export default Answer;
