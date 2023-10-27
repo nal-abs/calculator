@@ -20,4 +20,12 @@
 	color: red;
 	background-image: url('../src/Images/Tree.png');
 	background-size: contain;
+
+	.react-clock__hour-hand__body {
+ 		background-color: blue;
+ }
 };
+
+.react-clock_hour-mark_body{
+	background-color: aqua;
+ }
