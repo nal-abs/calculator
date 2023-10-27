@@ -5,7 +5,7 @@ import Answer from './components/Answer.js';
 import ReactClock from './components/Clock';
 
 const App = (context) =>
-	<div className="App" role="App">
+	<div className="App">
 		<div>
 			<Answer { ...context }/>
 			<Rows { ...context }/>
