@@ -1,7 +1,6 @@
 /* eslint-disable max-lines-per-function */
 import { React } from 'react';
 import MediaPlayer from 'react-web-components/MediaPlayer';
-import { peek } from '@laufire/utils/debug';
 import audios from '../services/audios';
 
 const constantValue = {
@@ -56,8 +55,6 @@ const InputButton = (context) => {
 		url: audios[audio],
 		status: audioStatus[audio],
 	};
-
-	peek(dynamicValue);
 
 	const value = { ...dynamicValue, ...constantValue };
 
