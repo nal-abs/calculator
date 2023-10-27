@@ -1,7 +1,8 @@
 /* eslint-disable max-lines-per-function */
-import { peek } from '@laufire/utils/debug';
 import { React } from 'react';
 import MediaPlayer from 'react-web-components/MediaPlayer';
+import { peek } from '@laufire/utils/debug';
+import audios from '../services/audios';
 
 const constantValue = {
 	type: 'audio',
@@ -18,17 +19,15 @@ const constantValue = {
 
 };
 const playAudio = (context) => {
-	const { state, setState, data: { category }} = context;
+	const { state, setState, data: { category: { audio }}} = context;
 	const { audioStatus } = state;
-
-	peek(category, 'category');
 
 	return setState((prev) => ({
 		...prev,
 		audioStatus: {
 			...audioStatus,
-			number: category.value && 'playing',
-			operator: category.operation && 'playing',
+			[audio]: 'playing',
+
 		},
 	}
 
@@ -37,26 +36,28 @@ const playAudio = (context) => {
 
 const InputButton = (context) => {
 	const {
-		data: { category, action, audios: { numberAudio, operationAudio }},
+		data: { category, action },
 		actions, state, setState,
 	} = context;
-	const { width, position, size, value: number } = category;
+	const { width, position, size, value: number, audio } = category;
 	const { audioStatus } = state;
 	const onChange = (event) => {
 		event.target.value.status === 'ended' && setState((prev) => ({
 			...prev,
 			audioStatus: {
 				...audioStatus,
-				number: category.value && 'ready',
-				operator: !category.value && 'ready',
+				[audio]: 'ready',
+
 			},
 		}));
 	};
 
 	const dynamicValue = {
-		url: category.value ? numberAudio : operationAudio,
-		status: category.value ? audioStatus.number : audioStatus.operator,
+		url: audios[audio],
+		status: audioStatus[audio],
 	};
+
+	peek(dynamicValue);
 
 	const value = { ...dynamicValue, ...constantValue };
 
