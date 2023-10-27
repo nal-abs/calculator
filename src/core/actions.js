@@ -1,8 +1,6 @@
 import CalcFunctions from '../services/CalcFunctions';
 
-const setNumber = (context) => ({
-	number: CalcFunctions.getNumber(context),
-});
+const setNumber = (context) => ({ number: CalcFunctions.getNumber(context) });
 
 const setOperator = (context) => ({
 	operator: context.data.operation,

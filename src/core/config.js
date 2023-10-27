@@ -1,4 +1,3 @@
-/* eslint-disable no-magic-numbers */
 const config = {
 	numberStart: 0,
 	button: {
@@ -19,8 +18,10 @@ const config = {
 				{ label: 7, value: 7, position: '-24vmin -8vmin' },
 				{ label: 8, value: 8, position: '0vmin -16vmin' },
 				{ label: 9, value: 9, position: '-8vmin -16vmin' },
-				{ label: '00', value: '00', position: '-16vmin -16vmin',
-					width: '16vmin', size: '200%' },
+				{
+					label: '00', value: '00', position: '-16vmin -16vmin',
+					width: '16vmin', size: '200%',
+				},
 				{ label: '%', value: '%', position: '-16vmin -32vmin' },
 			],
 			action: 'setNumber',
