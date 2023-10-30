@@ -7,10 +7,19 @@ const setOperator = (context) => ({
 	result: CalcFunctions.calculation(context),
 	number: 0,
 });
+const playAudio = ({ state: { audioStatus }, data: audio }) => ({
+	audioStatus: {
+		...audioStatus,
+		[audio]: 'playing',
+
+	},
+
+});
 
 const actions = {
 	setNumber,
 	setOperator,
+	playAudio,
 };
 
 export default actions;

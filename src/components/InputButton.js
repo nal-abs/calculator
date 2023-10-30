@@ -17,36 +17,21 @@ const constantValue = {
 	playbackRate: 1.0,
 
 };
-const playAudio = (context) => {
-	const { state, setState, data: { category: { audio }}} = context;
-	const { audioStatus } = state;
-
-	return setState((prev) => ({
-		...prev,
-		audioStatus: {
-			...audioStatus,
-			[audio]: 'playing',
-
-		},
-	}
-
-	));
-};
 
 const InputButton = (context) => {
 	const {
 		data: { category, action },
 		actions, state, setState,
 	} = context;
-	const { width, position, size, value: number, audio } = category;
+	const { width, position, size, audio } = category;
 	const { audioStatus } = state;
+
 	const onChange = (event) => {
 		event.target.value.status === 'ended' && setState((prev) => ({
 			...prev,
 			audioStatus: {
 				...audioStatus,
 				[audio]: 'ready',
-
 			},
 		}));
 	};
@@ -60,7 +45,6 @@ const InputButton = (context) => {
 
 	return (
 		<button
-			key={ number }
 			style={ {
 				backgroundPosition: position,
 				width: width,
@@ -69,7 +53,7 @@ const InputButton = (context) => {
 			className="sprite buttonSize"
 			onClick={ () => {
 				actions[action](category);
-				playAudio(context);
+				actions.playAudio(audio);
 			} }
 		>
 			<MediaPlayer { ...{ value, onChange } }/>
