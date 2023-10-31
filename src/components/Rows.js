@@ -8,7 +8,7 @@ const Rows = (context) => {
 	const style = { width: `${ PositionService.buttonPosition(context) }vMin` };
 
 	return (
-		<div style={ style }>
+		<div style={ style } className="row">
 			{ map(buttons, ({ categories, action }) =>
 				map(categories, (category, i) =>
 					<InputButton

@@ -15,7 +15,6 @@ const constantValue = {
 	loaded: 0,
 	duration: 0,
 	playbackRate: 1.0,
-
 };
 
 const InputButton = (context) => {
@@ -44,7 +43,7 @@ const InputButton = (context) => {
 	const value = { ...dynamicValue, ...constantValue };
 
 	return (
-		<button
+		<div
 			style={ {
 				backgroundPosition: position,
 				width: width,
@@ -57,7 +56,7 @@ const InputButton = (context) => {
 			} }
 		>
 			<MediaPlayer { ...{ value, onChange } }/>
-		</button>
+		</div>
 
 	);
 };
