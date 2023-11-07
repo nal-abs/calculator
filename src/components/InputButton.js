@@ -2,6 +2,7 @@
 import { React } from 'react';
 import MediaPlayer from 'react-web-components/MediaPlayer';
 import audios from '../services/audios';
+import { peek } from '@laufire/utils/debug';
 
 const constantValue = {
 	type: 'audio',
@@ -33,6 +34,7 @@ const InputButton = (context) => {
 				[audio]: 'ready',
 			},
 		}));
+		peek(audioStatus);
 	};
 
 	const dynamicValue = {

@@ -1,5 +1,5 @@
-import number from '../assets/numberBtn.mp3';
-import operator from '../assets/operationBtn.mp3';
+import number from '../assets/numberBtn.wav';
+import operator from '../assets/operationBtn.wav';
 
 const audios = {
 	number,
